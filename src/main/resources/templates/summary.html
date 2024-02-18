@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Summary</title>
+</head>
+<body>
+<h1>Green Fox Fashion Web Store</h1>
+<h1>Summary</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <td>Item name</td>
+                <td>Manufacturer</td>
+                <td>Category</td>
+                <td>Quantity</td>
+                <td>Sub-total price</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:text="${item.name}"></tr>
+            <tr th:text="${item.manufacturer.name}"></tr>
+            <tr th:text="${item.category}"></tr>
+            <tr th:text="${quantity}"></tr>
+            <tr th:text="${totalPrice}"></tr>
+        </tbody>
+    </table>
+    <a href="/shoppingplanner">Back to main</a>
+</body>
+</html>

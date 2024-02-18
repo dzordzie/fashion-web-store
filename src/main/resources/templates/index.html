@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Green Fox Fashion Web Store</h1>
+    <form action="/shoppingplanner/summary" method="post">
+        <label for="itemName"></label>
+        <select name="itemName" id="itemName">
+            <option value="0">Select item name</option>
+            <option th:each="item : ${items}" th:text="${item.name}"></option>
+        </select>
+
+        <label for="size"></label>
+        <select name="size" id="size">
+            <option value="0">Select size</option>
+            <option th:each="item : ${items}" th:text="${item.size}"></option>
+        </select>
+
+
+        <label for="total"></label>
+        <input type="text" id="total" name="total">
+
+        <input type="submit" value="GET TOTAL">
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <td>Item name</td>
+                <td>Manufacturer</td>
+                <td>Category</td>
+                <td>Size</td>
+                <td>Unit price</td>
+            </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item : ${items}">
+            <td th:text="${item.name}"></td>
+            <td th:text="${item.manufacturer.name}"></td>
+            <td th:text="${item.category}"></td>
+            <td th:text="${item.size}"></td>
+            <td th:text="${item.unit_price}"></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>
